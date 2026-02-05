@@ -19,4 +19,3 @@
 // module.exports = { add, sub };
 
 
-fs.readFile("math.js", {flag:"r" }, callback);
