@@ -35,6 +35,7 @@ const server = http.createServer((req, res) => {
       }
     });
   }
+  //asdfghjk
 
   // POST NOTES
   else if (req.method === "POST" && pathname === "/notes") {
