@@ -6,13 +6,11 @@ const server = http.createServer((req, res) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
   const pathname = url.pathname;
 
-  // HOME ROUTE
   if (req.method === "GET" && pathname === "/") {
     res.writeHead(200, { "Content-Type": "text/plain" });
     res.end("Welcome to Notes API");
   }
 
-  // GET NOTES (ALL OR SINGLE)
   else if (req.method === "GET" && pathname === "/notes") {
 
     const id = url.searchParams.get("id");
@@ -35,9 +33,7 @@ const server = http.createServer((req, res) => {
       }
     });
   }
-  //asdfghjk
-
-  // POST NOTES
+ 
   else if (req.method === "POST" && pathname === "/notes") {
 
     let body = "";
@@ -67,7 +63,6 @@ const server = http.createServer((req, res) => {
     });
   }
 
-  // NOT FOUND
   else {
     res.writeHead(404);
     res.end("Route not found");
